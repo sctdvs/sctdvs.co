@@ -1,33 +1,120 @@
-#Jekyll (2.5.2)
+# Poole
 
-##Using the Pack
-To use the Pack, we created 2 menu options, which you can find on the right of the menu. These menus can be configured in the `.codio` file.
+*The Strange Case of Dr. Jekyll and Mr. Hyde* tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel's supporting cast is a man by the name of Mr. Poole, Dr. Jekyll's loyal butler.
 
-1. **Start Jekyll** : When you come into your Project, start the Jekyll server.
-1. **Preview** : This previews your app. Note the Preview menu allows you to select 'Inside Codio' or 'New Browser Tab'. 
+-----
 
-##Accessing the application
-To access your application from a browser, you can use the menu option described above. The url of your Jekyll project can be found in the `Project->Box Info` menu and will look something like this
+Poole is the butler for [Jekyll](http://jekyllrb.com), the static site generator. It's designed and developed by [@mdo](https://twitter.com/mdo) to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example templates, pages, posts, and styles.
 
-```
-https://vital-ego.box.codio.io:9500/
-```
+![Poole](https://f.cloud.github.com/assets/98681/1834359/71ae4048-73db-11e3-9a3c-df38eb170537.png)
 
-We set this up using https so it can be previewed inside a Codio Tab.
+See Poole in action with [the demo site](http://demo.getpoole.com).
 
-##How the Pack was prepared
-This Starter Pack was built on the Jekyll Codio Certified Stack (Node, Grunt, MongoDB, Jekyll). The following commands were used to create the code workspace
+There are currently two official themes built on Poole:
+
+* [Hyde](http://hyde.getpoole.com)
+* [Lanyon](http://lanyon.getpoole.com)
+
+Individual theme feedback and bug reports should be submitted to the theme's individual repository.
+
+
+## Contents
+
+- [Usage](#usage)
+- [Options](#options)
+  - [Rems, `font-size`, and scaling](#rems-font-size-and-scaling)
+- [Development](#development)
+- [Author](#author)
+- [License](#license)
+
+
+## Usage
+
+### 1. Install dependencies
+
+Poole is built on Jekyll and uses its built-in SCSS compiler to generate our CSS. Before getting started, you'll need to install the Jekyll gem:
 
 ```bash
-jekyll .
-npm install
+$ gem install jekyll
 ```
 
-##Useful Links
+**Windows users:** Windows users have a bit more work to do, but luckily [@juthilo](https://github.com/juthilo) has your back with his [Run Jekyll on Windows](https://github.com/juthilo/run-jekyll-on-windows) guide.
 
-- [Jekyll](http://jekyllrb.com/)
-- [Node](http://nodejs.org/)
-- [npm](https://www.npmjs.org/)
-- [Grunt](http://gruntjs.com/)
-- [MongoDB](https://www.mongodb.org)
+**Need syntax highlighting?** Poole includes support for Pygments or Rouge, so install your gem of choice to make use of the built-in styling. Read more about this [in the Jekyll docs](http://jekyllrb.com/docs/templates/#code_snippet_highlighting).
 
+### 2a. Quick start
+
+To help anyone with any level of familiarity with Jekyll quickly get started, Poole includes everything you need for a basic Jekyll site. To that end, just download Poole and start up Jekyll.
+
+### 2b. Roll your own Jekyll site
+
+Folks wishing to use Jekyll's templates and styles can do so with a little bit of manual labor. Download Poole and then copy what you need (likely `_layouts/`, `*.html` files, `atom.xml` for RSS, and `public/` for CSS, JS, etc.).
+
+### 3. Running locally
+
+To see your Jekyll site with Poole applied, start a Jekyll server. In Terminal, from `/Poole` (or whatever your Jekyll site's root directory is named):
+
+```bash
+$ jekyll serve
+```
+
+Open <http://localhost:4000> in your browser, and voilà.
+
+### 4. Serving it up
+
+If you host your code on GitHub, you can use [GitHub Pages](https://pages.github.com) to host your project.
+
+1. Fork this repo and switch to the `gh-pages` branch.
+  1. If you're [using a custom domain name](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages), modify the `CNAME` file to point to your new domain.
+  2. If you're not using a custom domain name, **modify the `baseurl` in `_config.yml`** to point to your GitHub Pages URL. Example: for a repo at `github.com/username/poole`, use `http://username.github.io/poole/`. **Be sure to include the trailing slash.**
+3. Done! Head to your GitHub Pages URL or custom domain.
+
+No matter your production or hosting setup, be sure to verify the `baseurl` option file and `CNAME` settings. Not applying this correctly can mean broken styles on your site.
+
+## Options
+
+Poole includes some customizable options, typically applied via classes on the `<body>` element.
+
+
+### Rems, `font-size`, and scaling
+
+Poole is built almost entirely with `rem`s (instead of pixels). `rem`s are like `em`s, but instead of building on the immediate parent's `font-size`, they build on the root element, `<html>`.
+
+By default, we use the following:
+
+```css
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media (min-width: 38em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+```
+
+To easily scale your site's typography and components, simply customize the base `font-size`s here.
+
+
+## Development
+
+Poole has two branches, but only one is used for active development.
+
+- `master` for development.  **All pull requests should be to submitted against `master`.**
+- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
+
+
+## Author
+
+**Mark Otto**
+- <https://github.com/mdo>
+- <https://twitter.com/mdo>
+
+
+## License
+
+Open sourced under the [MIT license](LICENSE.md).
+
+<3
